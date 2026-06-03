@@ -1,9 +1,16 @@
-# Cloud.ru ML Inference
-
-> **Name:** cloudru-ml-inference
-> **Description:** Manage Cloud.ru ML Inference model runs — browse the predefined model catalog, deploy models with one command, manage lifecycle, and call inference endpoints. Full CRUD and inference via lightweight httpx-based client.
-> **Required env:** `CP_CONSOLE_KEY_ID`, `CP_CONSOLE_SECRET`, `PROJECT_ID`
-> **Required pip:** `httpx`
+---
+name: cloudru-ml-inference
+description: >
+  Manage Cloud.ru ML Inference model runs — browse the predefined model catalog,
+  deploy models with one command, manage lifecycle, and call inference endpoints.
+  Full CRUD and inference via lightweight httpx-based client.
+required_pip:
+  - httpx
+required_env:
+  - CP_CONSOLE_KEY_ID
+  - CP_CONSOLE_SECRET
+  - PROJECT_ID
+---
 
 ## What this skill does
 
