@@ -1,9 +1,13 @@
-# Cloud.ru Foundation Models
-
-> **Name:** cloudru-foundation-models
-> **Description:** Work with Cloud.ru Evolution Foundation Models via the OpenAI-compatible API. List models, generate cURL/Python examples, and use Cloud.ru as a model provider.
-> **Required pip:** `httpx`
-> **Required env:** `CLOUD_RU_FOUNDATION_MODELS_API_KEY`
+---
+name: cloudru-foundation-models
+description: >
+  Work with Cloud.ru Evolution Foundation Models via the OpenAI-compatible API.
+  List models, generate cURL/Python examples, and use Cloud.ru as a model provider.
+required_pip:
+  - httpx
+required_env:
+  - CLOUD_RU_FOUNDATION_MODELS_API_KEY
+---
 
 ## What this skill does
 
