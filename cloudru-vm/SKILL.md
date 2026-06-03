@@ -1,9 +1,16 @@
-# Cloud.ru Virtual Machines
-
-> **Name:** cloudru-vm
-> **Description:** Create and manage Cloud.ru virtual machines — full VM lifecycle, disks, networking, security groups, SSH/SCP. Uses the Cloud.ru Compute API via lightweight httpx-based client.
-> **Required env:** `CP_CONSOLE_KEY_ID`, `CP_CONSOLE_SECRET`, `PROJECT_ID`
-> **Required pip:** `httpx`
+---
+name: cloudru-vm
+description: >
+  Create and manage Cloud.ru virtual machines — full VM lifecycle, disks,
+  networking, security groups, SSH/SCP. Uses the Cloud.ru Compute API via
+  lightweight httpx-based client.
+required_pip:
+  - httpx
+required_env:
+  - CP_CONSOLE_KEY_ID
+  - CP_CONSOLE_SECRET
+  - PROJECT_ID
+---
 
 Manage virtual machines on Cloud.ru: create, start/stop/reboot, resize, delete VMs. Also manage disks, view flavors, images, subnets, security groups, and availability zones.
 
