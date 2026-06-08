@@ -4,12 +4,21 @@ description: >
   Manage Cloud.ru ML Inference model runs — browse the predefined model catalog,
   deploy models with one command, manage lifecycle, and call inference endpoints.
   Full CRUD and inference via lightweight httpx-based client.
+timeout_sec: 300
 required_pip:
   - httpx
 required_env:
   - CP_CONSOLE_KEY_ID
   - CP_CONSOLE_SECRET
   - PROJECT_ID
+allowed-tools: Fetch HTTP
+metadata:
+  openclaw:
+    requires:
+      env:
+        - CP_CONSOLE_KEY_ID
+        - CP_CONSOLE_SECRET
+        - PROJECT_ID
 ---
 
 ## What this skill does

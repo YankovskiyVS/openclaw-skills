@@ -330,13 +330,29 @@ def _auto_create_fip(client, project_id, vm_id, vm, zone_name):
         print(f"Warning: floating IP creation failed: {res.status_code} {res.text}", file=sys.stderr)
 
 
+def _resolve_private_key(args):
+    """Return SSH private key path for --wait-ssh, or None if unavailable."""
+    if getattr(args, "key_file", None):
+        return args.key_file
+    if getattr(args, "ssh_key_file", None):
+        path = args.ssh_key_file
+        return path[:-4] if path.endswith(".pub") else path
+    return None
+
+
 def _wait_ssh_ready(args, vm_id, timeout=300):
     """Retry SSH connection until it succeeds (cloud-init done)."""
+    key_path = _resolve_private_key(args)
+    if not key_path:
+        print(
+            "Warning: --wait-ssh skipped: provide --key-file or --ssh-key-file "
+            "to locate the private key (inline --ssh-key is not supported for SSH checks)",
+            file=sys.stderr,
+        )
+        return
     host = args.ip if hasattr(args, 'ip') and args.ip else _resolve_vm_ip(type('A', (), {'vm_id': vm_id})())
     user = args.login or "user1"
-    key_args = ["-i", args.ssh_key_file.replace(".pub", "")] if args.ssh_key_file else []
-    if args.key_file if hasattr(args, 'key_file') else None:
-        key_args = ["-i", args.key_file]
+    key_args = ["-i", key_path]
 
     print(f"Waiting for SSH to become ready ({timeout}s timeout)...")
     deadline = time.time() + timeout

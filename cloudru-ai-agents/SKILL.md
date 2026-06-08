@@ -1,6 +1,21 @@
 ---
 name: cloudru-ai-agents
 description: Manage Cloud.ru AI Agents platform — CRUD, lifecycle, triggers, workflows, MCP, marketplace, A2A chat, EvoClaw gateways
+timeout_sec: 300
+required_pip:
+  - httpx
+required_env:
+  - CP_CONSOLE_KEY_ID
+  - CP_CONSOLE_SECRET
+  - PROJECT_ID
+allowed-tools: Fetch HTTP
+metadata:
+  openclaw:
+    requires:
+      env:
+        - CP_CONSOLE_KEY_ID
+        - CP_CONSOLE_SECRET
+        - PROJECT_ID
 ---
 
 > **Required env:** `CP_CONSOLE_KEY_ID`, `CP_CONSOLE_SECRET`, `PROJECT_ID`

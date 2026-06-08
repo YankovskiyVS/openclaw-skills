@@ -14,7 +14,13 @@ import uuid
 from functools import wraps
 from urllib.parse import urlparse
 
-import httpx
+import sys
+
+try:
+    import httpx
+except ImportError:
+    print("Error: httpx is not installed. Run: pip install httpx", file=sys.stderr)
+    sys.exit(1)
 
 # Bypass corporate proxy for all Cloud.ru API calls
 for _k in ("HTTP_PROXY", "HTTPS_PROXY", "http_proxy", "https_proxy"):

@@ -10,7 +10,13 @@ import time
 import uuid
 from functools import wraps
 
-import httpx
+import sys
+
+try:
+    import httpx
+except ImportError:
+    print("Error: httpx is not installed. Run: pip install httpx", file=sys.stderr)
+    sys.exit(1)
 
 IAM_URL = "https://iam.api.cloud.ru"
 BFF_URL = "https://console.cloud.ru"

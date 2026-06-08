@@ -4,12 +4,25 @@ description: >
   Create and manage Cloud.ru virtual machines — full VM lifecycle, disks,
   networking, security groups, SSH/SCP. Uses the Cloud.ru Compute API via
   lightweight httpx-based client.
+timeout_sec: 300
 required_pip:
   - httpx
 required_env:
   - CP_CONSOLE_KEY_ID
   - CP_CONSOLE_SECRET
   - PROJECT_ID
+allowed-tools: Bash Fetch HTTP
+metadata:
+  openclaw:
+    requires:
+      env:
+        - CP_CONSOLE_KEY_ID
+        - CP_CONSOLE_SECRET
+        - PROJECT_ID
+      bins:
+        - python3
+        - ssh
+        - scp
 ---
 
 Manage virtual machines on Cloud.ru: create, start/stop/reboot, resize, delete VMs. Also manage disks, view flavors, images, subnets, security groups, and availability zones.

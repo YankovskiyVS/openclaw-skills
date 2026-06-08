@@ -5,7 +5,11 @@ import sys, os, json
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-import httpx
+try:
+    import httpx
+except ImportError:
+    print("Error: httpx is not installed. Run: pip install httpx", file=sys.stderr)
+    sys.exit(1)
 
 _API_BASE = "https://foundation-models.api.cloud.ru/v1"
 

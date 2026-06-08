@@ -19,7 +19,11 @@ from datetime import datetime, timedelta, timezone
 from typing import Any, Dict, List, Optional
 from urllib.parse import parse_qs, unquote, urlencode, urlparse
 
-import httpx
+try:
+    import httpx
+except ImportError:
+    print("Error: httpx is not installed. Run: pip install httpx", file=sys.stderr)
+    sys.exit(1)
 
 _ALLOWED_HOSTS = frozenset({"console.cloud.ru", "iam.api.cloud.ru"})
 
