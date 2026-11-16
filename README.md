@@ -12,6 +12,7 @@
 | **cloudru-vm** | Создание и управление виртуальными машинами Cloud.ru |
 | **cloudru-managed-rag** | RAG-пайплайн: базы знаний, семантический поиск, Q&A с LLM |
 | **cloudru-ai-agents** | Evolution AI Agents: CRUD агентов/систем/MCP, триггеры, workflows, marketplace, A2A-чат, EvoClaw |
+| **cloudru-export-claude-history** | Перенос диалогов, памяти и материалов из выгрузки Claude в рабочую среду агента |
 
 ## Быстрый старт
 
